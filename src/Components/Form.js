@@ -16,6 +16,12 @@ export default class Form extends Component {
         this.setState({[event.target.name]: event.target.value})
     }
 
+    addNewCar = () => {
+        const {make, model, year, color, price} = this.state;
+        const newCar = {make, model, year, color, price};
+        this.props.addVehicle(newCar);
+    }
+
     render(){
         const {make, model, year, color, price} = this.state
         return(
